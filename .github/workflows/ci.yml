@@ -22,4 +22,6 @@ jobs:
         run: go test ./...
 
       - name: style
+        step: go install honnef.co/go/tools/cmd/staticcheck@latest
         run: test -z $(go fmt ./...)
+        run: staticcheck ./... 
